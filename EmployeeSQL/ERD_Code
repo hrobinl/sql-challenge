@@ -1,0 +1,40 @@
+##Create a "Departments" table
+departments
+--
+dept_no CHAR(4) pk
+dept_name VARCHAR(255)
+
+##Create a "Dept_emp" table
+dept_emp
+--
+emp_no INT PK FK >- employees.emp_no
+dept_no CHAR(4) PK FK >- departments.dept_no
+
+##Create a "Dept_manager" table
+dept_manager
+--
+dept_no CHAR(4) PK FK >- departments.dept_no
+emp_no INT PK FK >- employees.emp_no
+
+##Create an "Employees" table
+employees
+--
+emp_no int pk
+emp_title_id varchar(10) FK >- titles.title_id
+birth_date date
+first_name varchar(255)
+last_name varchar(255)
+hire_date date
+sex enum('M','F')
+
+##Create a "Salaries" table
+salaries
+--
+emp_no INT PK FK >- employees.emp_no
+salary INT PK
+
+##Create a "Titles" table
+titles
+--
+title_id VARCHAR(10) pk
+title VARCHAR(255)
